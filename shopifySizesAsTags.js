@@ -79,9 +79,9 @@ class sizesAsTags {
 }
 
 const initScript = new sizesAsTags();
-/***
+/****
 To Run: 
 	While in Shopify admin, in devtools/js console, call: initScript.getStarted();
 
 To Stop, call: clearInterval(interval);
-***/
+****/
