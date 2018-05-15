@@ -1,0 +1,55 @@
+{% for list in tagLinkLists %}
+
+      {% assign name = settings[list] %}
+
+      {% if linklists[name].links.size > 0 %}
+
+        {% assign availableLinks = true %}
+        {% if linklists[name].title contains 'size' or linklists[name].title contains 'Size' %}
+
+            {% for link in linklists[name].links %}
+              {% assign sizeTagHandle = link.title | handleize %}
+              {% if collection.all_tags contains link.title %}
+                {% if current_tags contains sizeTagHandle %}
+                  {%- assign selectedSize = sizeTagHandle -%}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    
+	{% if selectedSize %}
+    	{% for product in collection.products %}
+    		{% assign tempVar = false %}
+            {% for variant in product.variants %}
+    			{% if variant.title contains selectedSize and variant.available %}
+    				{% assign tempVar = true %}
+    				{% break %}
+    			{% endif %}
+    		{% endfor %}
+            {% if tempVar == true %}
+    			{% include 'product-list-item' %}
+    		{% endif %}
+    	{% else %}
+          <p class="empty">{{ 'collections.collection.empty' | t }} {% if current_tags.size > 0 %}{{ 'collections.collection.empty_tag_filter' | t }}{% endif %}</p>
+        {% endfor %}
+    {% else %}
+      {% for product in collection.products %}
+ 		{% assign isCustomer = "" %}
+    	{% for tag in product.tags %}
+    		{% if tag  contains "customer" %}
+    			{% capture isCustomer %}1{% endcapture %}
+    		{% endif %}
+    	{% endfor %}
+    	{% if isCustomer =="" %}
+    		{% include 'product-list-item' %}
+   		{% endif %}
+      {% else %}
+        <p class="empty">{{ 'collections.collection.empty' | t }} {% if current_tags.size > 0 %}{{ 'collections.collection.empty_tag_filter' | t }}{% endif %}</p>
+      {% endfor %}
+    {% endif %}
+    
+  </div>
+  {% include 'pagination' %}
