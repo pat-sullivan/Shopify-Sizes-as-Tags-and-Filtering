@@ -12,6 +12,7 @@ The included JS file will look for products that have "Size" variants, and will 
 - Call: initScript.getStarted(); to run the script
 - The console will update after each successful product run.
 - To exit the script early, run: clearInterval(interval);
+
 ** Only run this from the admin, connected via HTTPS
 ** Use at your own risk. I have used this for multiple production sites, but it is not massively tested. I highly suggest doing a full product export before running, so you have a backup.
 
