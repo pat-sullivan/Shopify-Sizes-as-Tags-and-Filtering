@@ -5,7 +5,7 @@ This is not a complete solution, and isn't intended to be.
 This is intended to help other Shopify developers save some time trying to filter products by size.
 
 # First: 
-The included JS file will look for products that have "Size" variants, and will add each Size as a product tag. It does this by making API calls via the Shopify REST API. 
+**The included JS file will look for products that have "Size" variants, and will add each Size as a product tag. It does this by making API calls via the Shopify REST API.**
 - To create size tags for each product, log into the shopify admin.
 - From the admin, open devtools, and go to the console.
 - Copy/paste the included js code into the console.
@@ -13,8 +13,9 @@ The included JS file will look for products that have "Size" variants, and will 
 - The console will update after each successful product run.
 - To exit the script early, run: clearInterval(interval);
 
-* ** Only run this from the admin, connected via HTTPS
-** Use at your own risk. I have used this for multiple production sites, but it is not massively tested. I highly suggest doing a full product export before running, so you have a backup. *
+** *Only run this from the admin, connected via HTTPS*
+
+** *Use at your own risk. I have used this for multiple production sites, but it is not massively tested. I highly suggest doing a full product export before running, so you have a backup.*
 
 
 # Second:
