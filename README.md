@@ -1,5 +1,5 @@
 # Shopify-Sizes-as-Tags-Build-Filtering
-Simple JS script to bulk add product sizes as tags via API. And suggested usage for better filtering by size tags.
+Simple JS script to bulk add product sizes as tags via API. Also HTML/Liquid suggested usage for better filtering by size tags
 
 This is not a complete solution, and isn't intended to be.
 This is intended to help other Shopify developers save some time trying to filter products by size.
