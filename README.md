@@ -16,7 +16,7 @@ The included JS file will look for products that have "Size" variants, and will 
 ** Use at your own risk. I have used this for multiple production sites, but it is not massively tested. I highly suggest doing a full product export before running, so you have a backup.
 
 
-# Second
+# Second:
 You're much more on your own here, as each theme will be different. But the included HTML/Liquid can be used as a reference to correctly display the size tags and products. The issue/benefit here is that Shopify's built in tag filtering will filter products at the PRODUCT level, but we need to filter at the VARIANT level. (Otherwise size "Large" products that are out of stock, for example, will show available if they are in-stock in other sizes).  
 
 The included code should help you get started on that. If your theme doesn't have any built in tag filtering (usually tag dropdowns), you will need to write some Javascript to toggle the filters.
